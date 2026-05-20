@@ -22,3 +22,11 @@ jobs:
         with:
           name: apk-build
           path: build/apk/app-release.apk
+          
+      - name: Build APK
+        run: |
+          pip install flet
+          flet build apk --yes --verbose
+          
+      - name: Listar arquivos gerados
+        run: ls -R build
